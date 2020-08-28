@@ -16,8 +16,8 @@
   border-radius: 3px;
 }
 .recipe-editor-container button.add{
-  background-color: rgba(127, 235, 220, 0.692);
-  margin-bottom: 10px;
+  background-color: rgba(117, 216, 203, 0.692);
+  margin:30px 0px;
 
 }
 .recipe-editor-container button.close{
@@ -33,6 +33,10 @@
   line-height: 30px;
   right:20px;
   border-radius: 50%;
+  transition: .3s background-color ease;
+}
+.recipe-editor-container button.close:hover{
+  background-color: rgba(0,0,0,.3);
 }
 
 .recipe-editor-grid {

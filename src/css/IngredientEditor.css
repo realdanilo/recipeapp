@@ -12,6 +12,10 @@
 .ingredient-editor-grid button{
   background-color: rgba(245, 59, 59, 0.849);
   color:white;
+  transition: .3s background-color ease;
+}
+.ingredient-editor-grid button:hover{
+  background-color: rgba(245, 59, 59, 0.924);;
 }
 .ingredient-editor-grid input {
   width: 80%;

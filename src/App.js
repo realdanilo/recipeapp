@@ -8,13 +8,13 @@ import { v4 as uuid } from "uuid";
 const initialData = [
   {
     id: uuid(),
-    title: "name",
-    author: "author",
-    servings: 1,
-    instructions: "instructions",
+    title: "Grandma's cookies",
+    author: "Grandma",
+    servings: 20,
+    instructions: "Made with love",
     ingredients: [
-      { id: uuid(), ingredient: "one ingredient", amount: "one amount lb" },
-      { id: uuid(), ingredient: "two ingredient", amount: "lb" },
+      { id: uuid(), ingredient: "Love", amount: "tons" },
+      { id: uuid(), ingredient: "Cholocate", amount: "8 lb" },
     ],
   },
 ];
@@ -25,11 +25,11 @@ const reducer = (state, action) => {
       return [
         {
           id: uuid(),
-          title: "new title",
-          author: "my author",
+          title: "",
+          author: "",
           servings: 1,
-          instructions: "woo",
-          ingredients: [{ id: uuid(), ingredient: "ton", amount: "lbs" }],
+          instructions: "",
+          ingredients: [{ id: uuid(), ingredient: "", amount: "" }],
         },
         ...state,
       ];
