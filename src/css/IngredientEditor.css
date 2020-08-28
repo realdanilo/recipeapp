@@ -1,0 +1,21 @@
+.ingredient-editor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* justify-content: space-between; */
+  /* background-color: red; */
+  place-items: center;
+  font-size: 18px;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+.ingredient-editor-grid button{
+  background-color: rgba(245, 59, 59, 0.849);
+  color:white;
+}
+.ingredient-editor-grid input {
+  width: 80%;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.534);
+  border-radius: 2px;
+}
