@@ -1,12 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import "../css/Recipe.css";
 import Ingredient from "./Ingredient";
 import { DispatchContext } from "../RecipesContext";
 
-export default function Recipe(props) {
+function Recipe(props) {
   const { id, title, author, instructions, ingredients, setRecipeId, servings } = props;
   const dispatch = useContext(DispatchContext);
-  console.log("rendering")
+  console.log("rendering", id)
   return (
     <div className="recipe-container">
       <p>Title: {title}</p>
@@ -34,3 +34,4 @@ export default function Recipe(props) {
     </div>
   );
 }
+export default memo(Recipe)
