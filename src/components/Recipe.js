@@ -6,7 +6,6 @@ import { DispatchContext } from "../RecipesContext";
 function Recipe(props) {
   const { id, title, author, instructions, ingredients, setRecipeId, servings } = props;
   const dispatch = useContext(DispatchContext);
-  console.log("rendering", id)
   return (
     <div className="recipe-container">
       <p>Title: {title}</p>

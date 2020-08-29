@@ -1,8 +1,9 @@
-import React, { useReducer, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import ListRecipe from "./components/ListRecipe";
 import RecipeEditor from "./components/RecipeEditor";
 import { RecipesContext, DispatchContext } from "./RecipesContext";
+import useReducerLocalStorage from './useReducerLocalStorage'
 import { v4 as uuid } from "uuid";
 
 const initialData = [
@@ -45,7 +46,7 @@ const reducer = (state, action) => {
 };
 
 function App() {
-  const [recipes, dispatch] = useReducer(reducer, initialData);
+  const [recipes, dispatch] = useReducerLocalStorage('myrecipes', initialData, reducer)
   const [recipeId, setRecipeId] = useState(null);
   const recipeEditing = recipes.find((r) => r.id === recipeId);
 
