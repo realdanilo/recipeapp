@@ -7,13 +7,15 @@
   margin-bottom: 10px;
   width: 100%;
   padding: 15px;
+  overflow-x: hidden;
 }
 .recipe-container p {
   line-height: 2;
 }
 .instructions {
   margin-left: 15px;
-  white-space: pre;
+  white-space: pre-line;
+  width:100%;  position: relative;
 }
 .recipe-buttons {
   display: flex;

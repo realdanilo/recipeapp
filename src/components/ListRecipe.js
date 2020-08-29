@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import Recipe from "./Recipe";
 import "../css/ListRecipe.css";
-import { RecipesContext } from "../RecipesContext";
+import { RecipesContext, DispatchContext } from "../RecipesContext";
 
 export default function ListRecipe(props) {
-  const { recipes, dispatch } = useContext(RecipesContext);
+  const recipes = useContext(RecipesContext);
+  const dispatch = useContext(DispatchContext);
   return (
     <div className="list-recipe-container">
       <button

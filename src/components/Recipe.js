@@ -1,18 +1,19 @@
 import React, { useContext } from "react";
 import "../css/Recipe.css";
 import Ingredient from "./Ingredient";
-import { RecipesContext } from "../RecipesContext";
+import { DispatchContext } from "../RecipesContext";
 
 export default function Recipe(props) {
   const { id, title, author, instructions, ingredients, setRecipeId, servings } = props;
-  const { dispatch } = useContext(RecipesContext);
+  const dispatch = useContext(DispatchContext);
+  console.log("rendering")
   return (
     <div className="recipe-container">
       <p>Title: {title}</p>
       <p>By: {author}</p>
       <p>Servings: {servings}</p>
       <p>Instructions:</p>
-      <p className="instructions">{instructions}</p>
+      <div className="instructions">{instructions}</div>
       <p>Ingredients:</p>
       <div>
         {ingredients.map((ingredient) => (

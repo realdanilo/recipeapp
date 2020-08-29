@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { RecipesContext } from "../RecipesContext";
+import { DispatchContext } from "../RecipesContext";
 import IngredientEditor from "./IngredientEditor";
 import "../css/RecipeEditor.css";
 import { v4 as uuid } from "uuid";
@@ -7,7 +7,7 @@ import { v4 as uuid } from "uuid";
 
 export default function RecipeEditor(props) {
   const { title, author, instructions, id, ingredients, servings } = props.recipeEditing;
-  const { dispatch } = useContext(RecipesContext);
+  const dispatch = useContext(DispatchContext);
   const handleChange = (e) => {
     let newRecipe = {
       [e.target.name]: e.target.value

@@ -2,7 +2,7 @@ import React, { useReducer, useState } from "react";
 import "./App.css";
 import ListRecipe from "./components/ListRecipe";
 import RecipeEditor from "./components/RecipeEditor";
-import { RecipesContext } from "./RecipesContext";
+import { RecipesContext, DispatchContext } from "./RecipesContext";
 import { v4 as uuid } from "uuid";
 
 const initialData = [
@@ -51,10 +51,13 @@ function App() {
 
   return (
     <div className="App">
-      <RecipesContext.Provider value={{ recipes, dispatch }}>
-        <ListRecipe setRecipeId={setRecipeId} />
-        {recipeEditing && <RecipeEditor recipeEditing={recipeEditing} setRecipeId={setRecipeId} />}
-      </RecipesContext.Provider>
+      <DispatchContext.Provider value={dispatch}>
+        <RecipesContext.Provider value={recipes}>
+          <ListRecipe setRecipeId={setRecipeId} />
+          {recipeEditing && <RecipeEditor recipeEditing={recipeEditing} setRecipeId={setRecipeId} />}
+        </RecipesContext.Provider>
+      </DispatchContext.Provider>
+
     </div>
   );
 }
